@@ -23,7 +23,6 @@ install_requires = [
     'helperlibs',
     'jinja2',
     'pysvg-py3',
-    'pyExcelerator',
     'bcbio-gff',
     'networkx',
     'pandas',
@@ -32,12 +31,12 @@ install_requires = [
     'scikit-learn',
 ]
 
-tests_require = [
-    'pytest',
-    'minimock',
-    'coverage',
-    'pylint',
-]
+# tests_require = [
+#     'pytest',
+#     'minimock',
+#     'coverage',
+#     'pylint',
+# ]
 
 
 def read_version():
@@ -72,7 +71,7 @@ setup(
     description='The antibiotics and Secondary Metabolites Analysis Shell.',
     long_description=long_description,
     install_requires=install_requires,
-    tests_require=tests_require,
+    #tests_require=tests_require,
     entry_points={
         'console_scripts': [
             'download-antismash-databases=antismash.download_databases:main',
@@ -89,8 +88,8 @@ setup(
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
         'Operating System :: OS Independent',
-    ],
-    extras_require={
-        'testing': tests_require,
-    },
+    ]
+    # extras_require={
+    #     'testing': tests_require,
+    # },
 )
