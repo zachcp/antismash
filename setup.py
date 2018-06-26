@@ -61,11 +61,15 @@ class PyTest(TestCommand):
         errcode = pytest.main(self.test_args)
         sys.exit(errcode)
 
+def find_AS5_packages():
+    "recursively find packages but add the base directroy as well"
+    packages = find_packages()
+    return pacakges.append(".")
 
 setup(
     name="antismash",
     version=read_version(),
-    packages=find_packages().append("."),
+    packages=find_AS5_packages(),
     author='antiSMASH development team',
     author_email='antismash@secondarymetabolites.org',
     description='The antibiotics and Secondary Metabolites Analysis Shell.',
