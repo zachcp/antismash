@@ -72,11 +72,11 @@ setup(
     long_description=long_description,
     #install_requires=install_requires,
     #tests_require=tests_require,
-    entry_points={
-        'console_scripts': [
-            'download-antismash-databases=antismash.download_databases:main'
-        ],
-    },
+    entry_points='''
+        [console_scripts]
+        antismash=run_antismash:main
+        download-antismash-databases=antismash.download_databases:main
+    ''',
     #cmdclass={'test': PyTest},
     url='https://github.com/antismash/antismash',
     license='GNU Affero General Public License v3 or later (AGPLv3+)',
