@@ -1,7 +1,6 @@
 include *.txt *.md 
 
 include run_antismash.py
-include download_databases.py
 
 recursive-include antismash *.py
 recursive-include antismash *.info *.cfg *.txt *.tsv *.csv

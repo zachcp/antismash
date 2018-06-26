@@ -2,9 +2,7 @@
 import os
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
-import distutils.command.bdist_conda
 import sys
- 
 
 
 def read(fname):
@@ -48,20 +46,20 @@ def read_version():
             return line.split('=')[-1].strip().strip('"')
 
 
-# class PyTest(TestCommand):
-#     """Allow running tests via python setup.py test."""
+class PyTest(TestCommand):
+    """Allow running tests via python setup.py test."""
 
-#     def finalize_options(self):
-#         """Test command magic."""
-#         TestCommand.finalize_options(self)
-#         self.test_args = []
-#         self.test_suite = True
+    def finalize_options(self):
+        """Test command magic."""
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
 
-#     def run_tests(self):
-#         """Run tests."""
-#         import pytest
-#         errcode = pytest.main(self.test_args)
-#         sys.exit(errcode)
+    def run_tests(self):
+        """Run tests."""
+        import pytest
+        errcode = pytest.main(self.test_args)
+        sys.exit(errcode)
 
 
 setup(
@@ -79,7 +77,7 @@ setup(
             'download-antismash-databases=antismash.download_databases:main',
         ],
     },
-    cmdclass={'test': PyTest},
+    #cmdclass={'test': PyTest},
     url='https://github.com/antismash/antismash',
     license='GNU Affero General Public License v3 or later (AGPLv3+)',
     classifiers=[
