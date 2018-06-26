@@ -1,6 +1,6 @@
 """Setuptools magic to install antiSMASH."""
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 import sys
 
@@ -65,7 +65,7 @@ class PyTest(TestCommand):
 setup(
     name="antismash",
     version=read_version(),
-    packages=['antismash', '.'],
+    packages=['antismash', '.', find_packages()],
     author='antiSMASH development team',
     author_email='antismash@secondarymetabolites.org',
     description='The antibiotics and Secondary Metabolites Analysis Shell.',
