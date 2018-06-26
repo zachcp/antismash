@@ -65,7 +65,7 @@ class PyTest(TestCommand):
 setup(
     name="antismash",
     version=read_version(),
-    packages=['antismash', '.', find_packages()],
+    packages=find_packages().append("."),
     author='antiSMASH development team',
     author_email='antismash@secondarymetabolites.org',
     description='The antibiotics and Secondary Metabolites Analysis Shell.',
