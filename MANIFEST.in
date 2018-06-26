@@ -1,0 +1,29 @@
+include *.txt *.md 
+
+include run_antismash.py
+include download_databases.py
+
+recursive-include antismash *.py
+recursive-include antismash *.info *.cfg *.txt *.tsv *.csv
+
+recursive-include antismash *.hmm  *.hmm2 *.hmm3 *.hmmdb *.h3f *.h3i *.h3m *.h3p
+recursive-include antismash *.pkl
+recursive-include antismash *.faa *.fasta *.afa
+recursive-include antismash *.phr *.pin *.psq
+recursive-include antismash *.dmnd
+
+recursive-include antismash *.css *.js *.html *.tpl
+recursive-include antismash *.png *.gif
+
+recursive-include antismash *.dtd *.xml
+recursive-include antismash *.jar *.so *.pl *.sh
+
+recursive-include  antismash/specific_modules/nrpspks/sandpuma *.py *.mdl *als *.clw *.ph *.class *.java *.sig
+include antismash/specific_modules/nrpspks/sandpuma/dependencies/NRPSPredictor2/data/labeled_sigs
+include antismash/specific_modules/nrpspks/sandpuma/dependencies/NRPSPredictor2/data/fungal_labeled_sigs
+
+recursive-include scripts *.sh
+
+prune antismash/*/*/test/
+prune antismash/*/*/*/test/
+prune antismash/output_modules/html/lib/
