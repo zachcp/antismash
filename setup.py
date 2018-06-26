@@ -69,7 +69,7 @@ def find_AS5_packages():
 setup(
     name="antismash",
     version=read_version(),
-    packages=find_AS5_packages(),
+    packages=find_packages(),
     author='antiSMASH development team',
     author_email='antismash@secondarymetabolites.org',
     description='The antibiotics and Secondary Metabolites Analysis Shell.',
@@ -78,7 +78,6 @@ setup(
     #tests_require=tests_require,
     entry_points='''
         [console_scripts]
-        antismash=run_antismash:main
         download-antismash-databases=antismash.download_databases:main
     ''',
     #cmdclass={'test': PyTest},
