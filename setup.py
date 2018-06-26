@@ -64,7 +64,7 @@ class PyTest(TestCommand):
 def find_AS5_packages():
     "recursively find packages but add the base directroy as well"
     packages = find_packages()
-    return pacakges.append(".")
+    return packages.append(".")
 
 setup(
     name="antismash",
